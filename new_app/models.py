@@ -1,8 +1,7 @@
 from django.db import models
-from unicodedata import category
 
 
-STAUS_OF_TASKS = [
+STATUS_OF_TASKS = [
         ('new', 'New'),
         ('in prog', 'In Progress'),
         ('pend', 'Pending'),
@@ -13,31 +12,45 @@ STAUS_OF_TASKS = [
 
 
 class Task(models.Model):
-
     title = models.CharField(
         max_length=255,
-        unique_for_date='created_at',
+        unique=True,
         null=False,
         blank=False
     )
 
     description = models.TextField()
-    categories = models.ManyToManyField('Category', related_name='tasks')
+    categories = models.ManyToManyField(
+        'Category',
+        related_name='tasks',
+        blank=True
+    )
 
     status = models.CharField(
         max_length=10,
-        choices=STAUS_OF_TASKS,
+        choices=STATUS_OF_TASKS,
         default='na'
     )
 
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.title
 
-class Subtask(models.Model):
+    class Meta:
+        db_table = 'task_manager_task'
 
+        verbose_name = 'Task'
+        verbose_name_plural = 'Tasks'
+        ordering = ['-created_at', 'title']
+
+
+
+class SubTask(models.Model):
     title = models.CharField(
         max_length=255,
+        unique=True,
         null=False,
         blank=False
     )
@@ -51,13 +64,34 @@ class Subtask(models.Model):
     )
     status = models.CharField(
         max_length=10,
-        choices=STAUS_OF_TASKS,
+        choices=STATUS_OF_TASKS,
         default='na'
     )
 
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'task_manager_subtask'
+        ordering = ['-created_at', 'title']
+
+        verbose_name = 'SubTask'
+        verbose_name_plural = 'SubTasks'
+
 
 class Category(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
+
+
+    def __str__(self):
+        return self.name
+
+
+    class Meta:
+        db_table = 'task_manager_category'
+
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
