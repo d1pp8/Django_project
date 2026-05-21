@@ -1,14 +1,13 @@
 from django.db import models
 
-
 STATUS_OF_TASKS = [
-        ('new', 'New'),
-        ('in prog', 'In Progress'),
-        ('pend', 'Pending'),
-        ('bl', 'Blocked'),
-        ('dn', 'Done'),
-        ('na', 'N/A')
-    ]
+    ('new', 'New'),
+    ('in prog', 'In Progress'),
+    ('pend', 'Pending'),
+    ('bl', 'Blocked'),
+    ('dn', 'Done'),
+    ('na', 'N/A')
+]
 
 
 class Task(models.Model):
@@ -44,7 +43,6 @@ class Task(models.Model):
         verbose_name = 'Task'
         verbose_name_plural = 'Tasks'
         ordering = ['-created_at', 'title']
-
 
 
 class SubTask(models.Model):
@@ -85,10 +83,8 @@ class SubTask(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=30, unique=True)
 
-
     def __str__(self):
         return self.name
-
 
     class Meta:
         db_table = 'task_manager_category'
