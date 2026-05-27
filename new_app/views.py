@@ -7,6 +7,9 @@ from .models import Task
 from .serializers import TaskCreateSerializer, TaskListSerializer, TaskDetailSerializer
 
 
+from django.db.models import Count, Q
+
+
 @api_view(['POST'])
 def task_create(request):
     task = TaskCreateSerializer(data=request.data)
@@ -32,3 +35,24 @@ def task_detail(request, pk):
 
     serializer = TaskDetailSerializer(task)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def task_stats(request):
+    stats = Task.objects.aggregate(
+        total_tasks=Count('id'),
+        new_tasks=Count(
+            'id',
+            filter=Q(status='new')
+        ),
+        in_progress_tasks=Count(
+            'id',
+            filter=Q(status='in_progress')
+        ),
+        done_tasks=Count(
+            'id',
+            filter=Q(status='done')
+        )
+    )
+
+    return Response(stats)
