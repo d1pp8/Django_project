@@ -15,7 +15,6 @@ class TaskAdmin(admin.ModelAdmin):
     list_display = [
         'show_title',
         'description',
-        # 'category',
         'status',
         'created_at',
         'deadline'
