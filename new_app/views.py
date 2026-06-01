@@ -8,6 +8,7 @@ from .serializers import TaskCreateSerializer, TaskListSerializer, TaskDetailSer
 
 
 from django.db.models import Count, Q
+from django.utils import timezone
 
 
 @api_view(['POST'])
@@ -52,6 +53,10 @@ def task_stats(request):
         done_tasks=Count(
             'id',
             filter=Q(status='done')
+        ),
+        overdue_tasks=Count(
+            'id',
+            filter=Q(deadline__lt=timezone.now()) & ~Q(status='done')
         )
     )
 
