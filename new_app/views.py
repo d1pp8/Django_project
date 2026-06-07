@@ -5,8 +5,8 @@ from rest_framework import status
 from rest_framework.views import APIView
 
 from .models import Task, SubTask, Category
-import serializers
-
+from . import serializers, pagination
+from .pagination import SubTaskPagination
 
 from django.db.models import Count, Q, Model
 from django.utils import timezone
@@ -25,7 +25,26 @@ def task_create(request):
 
 @api_view(['GET'])
 def task_list(request):
+
+    weekday = request.GET.get('weekday')
+
     tasks = Task.objects.all()
+
+    weekdays = {
+        'sunday': 1,
+        'monday': 2,
+        'tuesday': 3,
+        'wednesday': 4,
+        'thursday': 5,
+        'friday': 6,
+        'saturday': 7,
+    }
+
+    if weekday:
+        day_number = weekdays.get(weekday.lower())
+        if day_number:
+            tasks = tasks.filter(deadline__week_day=day_number)
+
 
     serializer = serializers.TaskListSerializer(tasks, many=True)
     return Response(serializer.data)
@@ -66,10 +85,23 @@ def task_stats(request):
 
 class SubTaskListCreateView(APIView):
     def get(self,request):
+
+        task_title = request.GET.get('task_title')
+        status_name = request.GET.get('status')
+
         subtasks = SubTask.objects.all()
 
-        serializer = serializers.SubTaskSerializer(subtasks, many=True)
-        return Response(serializer.data)
+        if task_title:
+            subtasks = subtasks.filter(task__title=task_title)
+
+        if status_name:
+            subtasks = subtasks.filter(status=status_name)
+
+        paginator = SubTaskPagination()
+        page = paginator.paginate_queryset(subtasks,request)
+
+        serializer = serializers.SubTaskSerializer(page, many=True)
+        return paginator.get_paginated_response(serializer.data)
 
     def post(self, request):
         serializer = serializers.SubTaskCreateSerializer(data=request.data)

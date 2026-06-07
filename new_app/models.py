@@ -11,25 +11,11 @@ STATUS_OF_TASKS = [
 
 
 class Task(models.Model):
-    title = models.CharField(
-        max_length=255,
-        unique=True,
-        null=False,
-        blank=False
-    )
+    title = models.CharField(max_length=255,unique=True,null=False,blank=False)
 
     description = models.TextField()
-    categories = models.ManyToManyField(
-        'Category',
-        related_name='tasks',
-        blank=True
-    )
-
-    status = models.CharField(
-        max_length=10,
-        choices=STATUS_OF_TASKS,
-        default='na'
-    )
+    categories = models.ManyToManyField('Category',related_name='tasks',blank=True)
+    status = models.CharField(max_length=10,choices=STATUS_OF_TASKS,default='na')
 
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -46,25 +32,12 @@ class Task(models.Model):
 
 
 class SubTask(models.Model):
-    title = models.CharField(
-        max_length=255,
-        unique=True,
-        null=False,
-        blank=False
-    )
+    title = models.CharField(max_length=255,unique=True,null=False,blank=False)
 
     description = models.TextField()
 
-    task = models.ForeignKey(
-        'Task',
-        on_delete=models.CASCADE,
-        related_name='subtasks'
-    )
-    status = models.CharField(
-        max_length=10,
-        choices=STATUS_OF_TASKS,
-        default='na'
-    )
+    task = models.ForeignKey('Task',on_delete=models.CASCADE,related_name='subtasks')
+    status = models.CharField(max_length=10,choices=STATUS_OF_TASKS,default='na')
 
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
