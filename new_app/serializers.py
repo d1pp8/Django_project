@@ -57,3 +57,9 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
         if Category.objects.filter(name=name).exclude(id=instance.id).exists():
             raise serializers.ValidationError({"name": "Category already exists"})
         return super().update(instance, validated_data)
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'

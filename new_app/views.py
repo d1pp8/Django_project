@@ -1,6 +1,9 @@
 from rest_framework.decorators import api_view
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from unicodedata import category
 
 from .models import Task, SubTask, Category
 from . import serializers
@@ -96,3 +99,14 @@ def task_stats(request):
     return Response(stats)
 
 
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = serializers.CategorySerializer
+
+    @action(detail=True, methods=['get'])
+    def count_tasks(self, request, pk=None):
+        category = self.get_object()
+        return Response({
+            'category': category.name,
+            'tasks': category.tasks.count()
+        })
