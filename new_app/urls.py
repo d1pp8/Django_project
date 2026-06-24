@@ -12,8 +12,8 @@ router = DefaultRouter()
 router.register('category', CategoryViewSet)
 
 urlpatterns = [
-    path('task/', TaskListCreateView.as_view(), name='task-list-create'),
-    path('task/<int:pk>/', TaskRetrieveUpdateDeleteView.as_view(), name='task-detail-update-delete'),
+    path('tasks/', TaskListCreateView.as_view(), name='task-list-create'),
+    path('tasks/<int:pk>/', TaskRetrieveUpdateDeleteView.as_view(), name='task-detail-update-delete'),
 
     path('stats/', task_stats, name="task-stats"),
 
