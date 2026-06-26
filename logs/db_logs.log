@@ -180,3 +180,131 @@
             WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
             ORDER BY name; args=None; alias=default
 (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'perna' LIMIT 21; args=('perna',); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."id" ASC LIMIT 7; args=(); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 3); args=(3,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 4); args=(4,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 5); args=(5,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 6); args=(6,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 8); args=(8,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 9); args=(9,); alias=default
+(0.000) SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."id" ASC LIMIT 7; args=(); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 3); args=(3,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 4); args=(4,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 5); args=(5,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 6); args=(6,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 8); args=(8,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 9); args=(9,); alias=default
+(0.000) SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" WHERE "task_manager_task"."id" > 9 ORDER BY "task_manager_task"."id" ASC LIMIT 7; args=(9,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 10); args=(10,); alias=default
+(0.000) SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."id" ASC LIMIT 7; args=(); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 3); args=(3,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 4); args=(4,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 5); args=(5,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 6); args=(6,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 8); args=(8,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 9); args=(9,); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."id" ASC LIMIT 6; args=(); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 3); args=(3,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 4); args=(4,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 5); args=(5,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 6); args=(6,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 8); args=(8,); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."id" ASC LIMIT 6; args=(); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 3); args=(3,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 4); args=(4,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 5); args=(5,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 6); args=(6,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 8); args=(8,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'perna' LIMIT 21; args=('perna',); alias=default
+(0.000) SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."id" ASC LIMIT 6; args=(); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 3); args=(3,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 4); args=(4,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 5); args=(5,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 6); args=(6,); alias=default
+(0.000) SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 8); args=(8,); alias=default

@@ -1,6 +1,8 @@
 from pathlib import Path
 from environ import Env
 
+from datetime import timedelta
+
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -120,7 +122,19 @@ STATIC_URL = 'static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'new_app.pagination.CustomCursorPagination',
-    'PAGE_SIZE': 6,
+    'PAGE_SIZE': 5,
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
+SIMPLE_JWT = {
+ 'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+ 'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
 LOGGING = {

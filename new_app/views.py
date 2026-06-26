@@ -1,8 +1,8 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, action, permission_classes
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import viewsets
-from rest_framework.decorators import action
 
 from .models import Task, SubTask, Category
 from . import serializers
@@ -14,6 +14,11 @@ from django.utils import timezone
 class TaskListCreateView(ListCreateAPIView):
 
     serializer_class = serializers.TaskListSerializer
+
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [AllowAny()]
+        return [IsAuthenticated()]
 
     def get_queryset(self):
 
@@ -34,7 +39,6 @@ class TaskListCreateView(ListCreateAPIView):
         if ordering:
             queryset = queryset.order_by(ordering)
 
-
         return queryset
 
 
@@ -43,11 +47,21 @@ class TaskRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = serializers.TaskDetailSerializer
 
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [AllowAny()]
+        return [IsAuthenticated()]
+
 
 
 class SubTaskListCreateView(ListCreateAPIView):
 
     serializer_class = serializers.SubTaskSerializer
+
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [AllowAny()]
+        return [IsAuthenticated()]
 
     def get_queryset(self):
 
@@ -70,10 +84,16 @@ class SubTaskRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
     queryset = SubTask.objects.all()
     serializer_class = serializers.SubTaskSerializer
 
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [AllowAny()]
+        return [IsAuthenticated()]
+
 
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def task_stats(request):
     stats = Task.objects.aggregate(
         total_tasks=Count('id'),
@@ -102,6 +122,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = serializers.CategorySerializer
 
+
     @action(detail=True, methods=['get'])
     def count_tasks(self, request, pk=None):
         category = self.get_object()
@@ -109,3 +130,8 @@ class CategoryViewSet(viewsets.ModelViewSet):
             'category': category.name,
             'tasks': category.tasks.count()
         })
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve','count_tasks']:
+            return [AllowAny()]
+        return [IsAuthenticated()]

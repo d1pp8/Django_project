@@ -12,3 +12,12 @@ Not Found: /taskmanager/category/count_tasks/
 Not Found: /taskmanager/category/count_tasks/
 Not Found: /taskmanager/category/count_tasks/
 Not Found: /taskmanager/category/count_tasks/
+Not Found: /
+Not Found: /favicon.ico
+Method Not Allowed: /api/tocken/
+Not Found: /api/tocken/refresh/
+Not Found: /
+Method Not Allowed: /api/tocken/refresh/
+Not Found: /
+Method Not Allowed: /api/token/
+Unauthorized: /api/tasks/
